@@ -39,7 +39,7 @@ jobs:
     # Push the Docker Image
     - name: Push Docker Image
       run: |
-        docker push anand0420/devops-demo:${{ env.VERSION }}
+        docker push anand0420/demo:${{ env.VERSION }}
 
     # UPdate the K8s Manifest Files
     - name: Update K8s Manifests
