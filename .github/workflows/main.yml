@@ -34,7 +34,7 @@ jobs:
     # Build the Docker Image
     - name: Build Docker Image
       run: |
-        docker build -t anand0420/devops-demo:${{ env.VERSION }} .
+        docker build -t anand0420/demo:${{ env.VERSION }} .
 
     # Push the Docker Image
     - name: Push Docker Image
@@ -45,7 +45,7 @@ jobs:
     - name: Update K8s Manifests
       run: |
         cat deploy/deployment.yaml
-        sed -i "s|image: anand0420/devops-demo:.*|image: anand0420/devops-demo:${{ env.VERSION }}|g" deploy/deployment.yaml
+        sed -i "s|image: anand0420/demo:.*|image: anand0420/demo:${{ env.VERSION }}|g" deploy/deployment.yaml
         cat deploy/deployment.yaml
 
     # Update Github
